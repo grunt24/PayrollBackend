@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Brent Jay\\Desktop\\MainPayrollSystem\\PayrollSystemBackend\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C42BF5FD-7969-4249-A9B1-BB0EFE410490}|PayrollSystemBackend\\PayrollSystemBackend.csproj|c:\\users\\brent jay\\desktop\\mainpayrollsystem\\payrollsystembackend\\payrollsystembackend\\servicerepository\\payrollservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C42BF5FD-7969-4249-A9B1-BB0EFE410490}|PayrollSystemBackend\\PayrollSystemBackend.csproj|solutionrelative:payrollsystembackend\\servicerepository\\payrollservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 309,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PayrollService.cs",
+              "DocumentMoniker": "C:\\Users\\Brent Jay\\Desktop\\MainPayrollSystem\\PayrollSystemBackend\\PayrollSystemBackend\\ServiceRepository\\PayrollService.cs",
+              "RelativeDocumentMoniker": "PayrollSystemBackend\\ServiceRepository\\PayrollService.cs",
+              "ToolTip": "C:\\Users\\Brent Jay\\Desktop\\MainPayrollSystem\\PayrollSystemBackend\\PayrollSystemBackend\\ServiceRepository\\PayrollService.cs",
+              "RelativeToolTip": "PayrollSystemBackend\\ServiceRepository\\PayrollService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-14T00:20:26.525Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

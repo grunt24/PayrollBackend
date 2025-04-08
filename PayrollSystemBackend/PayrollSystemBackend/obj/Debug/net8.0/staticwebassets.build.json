@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "sY4rPUVPAlo9i+5yqHiy253feZwkPqQzUTBcdIFvTMQ=",
+  "Source": "PayrollSystemBackend",
+  "BasePath": "_content/PayrollSystemBackend",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
