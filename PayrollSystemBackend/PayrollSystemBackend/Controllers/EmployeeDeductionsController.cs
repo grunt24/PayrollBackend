@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Identity.Client;
 using PayrollSystemBackend.Core.Dto.Employee;
@@ -10,6 +11,8 @@ namespace PayrollSystemBackend.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
+
     public class EmployeeDeductionsController : ControllerBase
     {
         private readonly IEmployeeDeduction _employeeDeductionService;

@@ -222,6 +222,22 @@
   },
   {
     "ContainingType": "PayrollSystem.Controllers.AuthController",
+    "Method": "ChangePassword",
+    "RelativePath": "api/Auth/change-password",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "changePasswordDto",
+        "Type": "PayrollSystemBackend.Core.Dto.ChangePassword.ChangePasswordDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PayrollSystem.Controllers.AuthController",
     "Method": "Login",
     "RelativePath": "api/Auth/login",
     "HttpMethod": "POST",
@@ -1137,6 +1153,22 @@
   },
   {
     "ContainingType": "payroll_system.Controllers.PayrollController",
+    "Method": "ExportPayslipsByPayrollIdsToCsv",
+    "RelativePath": "api/Payroll/export/by-payroll-ids/csv",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "PayrollSystemBackend.Core.Dto.Payroll.PayslipPerPayrollId",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "payroll_system.Controllers.PayrollController",
     "Method": "ExportPayrollByEmployeeToCsv",
     "RelativePath": "api/Payroll/export/by-payroll/{payrollId}/csv",
     "HttpMethod": "GET",
@@ -1165,6 +1197,16 @@
     "ContainingType": "payroll_system.Controllers.PayrollController",
     "Method": "GetAllPayrolls",
     "RelativePath": "api/Payroll/GetAll",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "payroll_system.Controllers.PayrollController",
+    "Method": "GetPayrolls",
+    "RelativePath": "api/Payroll/GetAllPayrolls",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,

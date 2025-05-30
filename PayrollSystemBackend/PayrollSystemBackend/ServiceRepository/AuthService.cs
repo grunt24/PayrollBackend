@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 using PayrollSystemBackend.Core.Dto.AuthDto;
+using PayrollSystemBackend.Core.Dto.ChangePassword;
 using PayrollSystemBackend.ServiceRepository.InterfaceRepository;
 using System.Collections.Generic;
 using System.Data;
@@ -23,6 +24,35 @@ namespace payroll_system.Core.Services
             _configuration = configuration;
         }
 
+        public async Task<(bool Success, IEnumerable<string> Errors)> ChangePasswordAsync(ChangePasswordDto changePasswordDto, ClaimsPrincipal userPrincipal)
+        {
+            if (changePasswordDto.NewPassword != changePasswordDto.ConfirmPassword)
+            {
+                return (false, new[] { "New password and confirm password do not match." });
+            }
+
+            var userId = userPrincipal.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (string.IsNullOrEmpty(userId))
+            {
+                return (false, new[] { "User ID not found in token." });
+            }
+
+            var user = await _userManager.FindByIdAsync(userId);
+            if (user == null)
+            {
+                return (false, new[] { "User not found." });
+            }
+
+            var result = await _userManager.ChangePasswordAsync(user, changePasswordDto.CurrentPassword, changePasswordDto.NewPassword);
+
+            if (!result.Succeeded)
+            {
+                return (false, result.Errors.Select(e => e.Description));
+            }
+
+            return (true, Enumerable.Empty<string>());
+        }
+
         public async Task SeedAdminUser()
         {
             using var scope = _serviceProvider.CreateScope();
@@ -30,29 +60,29 @@ namespace payroll_system.Core.Services
             var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
 
             // Check if the admin role exists, if not, create it
-            if (!await roleManager.RoleExistsAsync("TimeKeeper"))
+            if (!await roleManager.RoleExistsAsync("Admin"))
             {
-                await roleManager.CreateAsync(new IdentityRole("TimeKeeper"));
+                await roleManager.CreateAsync(new IdentityRole("Admin"));
             }
 
             // Check if the admin user already exists
-            var adminUser = await userManager.FindByNameAsync("timekeeper");
+            var adminUser = await userManager.FindByNameAsync("admin");
             if (adminUser == null)
             {
                 // Create the admin user
                 adminUser = new IdentityUser
                 {
-                    UserName = "TimeKeeper",
-                    Email = "TimeKeeper@gmail.com",
+                    UserName = "admin",
+                    Email = "admin@gmail.com",
                     EmailConfirmed = true
                 };
 
                 // Create the user with a password
-                var result = await userManager.CreateAsync(adminUser, "TimeKeeper123!");
+                var result = await userManager.CreateAsync(adminUser, "Admin123!");
                 if (result.Succeeded)
                 {
                     // Assign the admin role to the user
-                    await userManager.AddToRoleAsync(adminUser, "TimeKeeper");
+                    await userManager.AddToRoleAsync(adminUser, "Admin");
                 }
             }
         }

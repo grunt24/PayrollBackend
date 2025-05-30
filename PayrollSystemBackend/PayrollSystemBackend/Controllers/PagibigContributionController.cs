@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using PayrollSystemBackend.Core.Entities.Contributions;
 using PayrollSystemBackend.ServiceRepository.InterfaceRepository;
 using System.Collections.Generic;
@@ -8,6 +9,8 @@ namespace PayrollSystemBackend.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
+
     public class PagibigContributionController : ControllerBase
     {
         private readonly IPagibigContributionService _service;

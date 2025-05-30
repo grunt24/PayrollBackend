@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PayrollSystemBackend.Core.Entities.Contributions;
 using PayrollSystemBackend.ServiceRepository.InterfaceRepository;
@@ -7,6 +8,8 @@ namespace PayrollSystemBackend.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
+
     public class SSSContributionController : ControllerBase
     {
         private readonly ISSSContributionService _service;

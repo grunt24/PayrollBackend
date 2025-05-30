@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using payroll_system.Core.Services;
 using PayrollSystem.Domain.Entities;
@@ -14,6 +15,8 @@ namespace payroll_system.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
+
     public class PayrollController : ControllerBase
     {
         private readonly IPayrollService _payrollService;
@@ -23,6 +26,13 @@ namespace payroll_system.Controllers
         {
             _payrollService = payrollService;
             _employeeService = employeeService;
+        }
+
+        [HttpGet("GetAllPayrolls")]
+        public async Task<IActionResult> GetPayrolls()
+        {
+            var result = await _payrollService.GetPayrolls();
+            return Ok(result);
         }
 
         // ✅ GET PAYROLL DATA FOR VIEWING
@@ -136,7 +146,7 @@ namespace payroll_system.Controllers
             {
                 return BadRequest(new
                 {
-                    message = "Some payrolls failed to generate.",
+                    message = ".",
                     errors = failedResults.Select(r => r.Error?.Message).ToList()
                 });
             }
@@ -211,30 +221,79 @@ namespace payroll_system.Controllers
             var sb = new StringBuilder();
 
             // CSV header row
-            sb.AppendLine("ID Number,Full Name,Payroll Period,Gross Salary,Net Salary,Total Deductions," +
+            // Updated CSV Header to include Department and Position
+            sb.AppendLine("Payroll Number,ID Number,Full Name,Department,Position,Payroll Period,Gross Salary,Net Salary,Total Deductions," +
                           "SSS EE Share,SSS ER Share,PhilHealth EE Share,PhilHealth ER Share," +
                           "Pag-IBIG EE Share,Pag-IBIG ER Share,Total EE Contributions,Total ER Contributions," +
                           "Total Contribution,Others");
 
-            foreach (var payroll in payrolls)
+            foreach (var payslip in payrolls)
             {
-                var others = payroll.EmployeeDeductions.Any()
-                    ? string.Join(", ", payroll.EmployeeDeductions.Select(d => $"{d.EmployeeDeductionName}: {d.Amount}"))
+                var others = payslip.EmployeeDeductions != null && payslip.EmployeeDeductions.Any()
+                    ? string.Join(", ", payslip.EmployeeDeductions.Select(d => $"{d.EmployeeDeductionName}: {d.Amount}"))
                     : "N/A";
 
-                sb.AppendLine($"{payroll.IdNumber},\"{payroll.FullName}\"," +
-                              $"\"{payroll.PayrollStartDate} - {payroll.PayrollEndDate}\"," +
-                              $"\"{payroll.GrossSalary}\",\"{payroll.NetSalary}\",\"{payroll.TotalDeductions}\"," +
-                              $"\"{payroll.SssEmployeeShare}\",\"{payroll.SssEmployerShare}\"," +
-                              $"\"{payroll.PhilHealthEmployeeShare}\",\"{payroll.PhilHealthEmployerShare}\"," +
-                              $"\"{payroll.PagibigEmployeeShare}\",\"{payroll.PagibigEmployerShare}\"," +
-                              $"\"{payroll.TotalEmployeeContributions}\",\"{payroll.TotalEmployerContributions}\"," +
-                              $"\"{payroll.TotalContribution}\",\"{others}\"");
+                sb.AppendLine($"{payslip.PayrollNumber},{payslip.IdNumber},\"{payslip.FullName}\",\"{payslip.Department}\",\"{payslip.Position}\"," +
+                              $"\"{payslip.PayrollStartDate} - {payslip.PayrollEndDate}\"," +
+                              $"\"{payslip.GrossSalary}\",\"{payslip.NetSalary}\",\"{payslip.TotalDeductions}\"," +
+                              $"\"{payslip.SssEmployeeShare}\",\"{payslip.SssEmployerShare}\"," +
+                              $"\"{payslip.PhilHealthEmployeeShare}\",\"{payslip.PhilHealthEmployerShare}\"," +
+                              $"\"{payslip.PagibigEmployeeShare}\",\"{payslip.PagibigEmployerShare}\"," +
+                              $"\"{payslip.TotalEmployeeContributions}\",\"{payslip.TotalEmployerContributions}\"," +
+                              $"\"{payslip.TotalContribution}\",\"{others}\"");
             }
 
             return sb.ToString();
         }
+        //Select payslip to download by payroll ID
 
+        [HttpPost("export/by-payroll-ids/csv")]
+        public async Task<IActionResult> ExportPayslipsByPayrollIdsToCsv([FromBody] PayslipPerPayrollId request)
+        {
+            if (request.PayrollId == null || !request.PayrollId.Any())
+                return BadRequest("Please provide at least one payroll ID.");
 
+            var allPayslips = new List<PayslipDto>();
+
+            foreach (var payrollId in request.PayrollId)
+            {
+                var payslips = await _payrollService.GetPayslipByPayrollId(payrollId);
+                allPayslips.AddRange(payslips);
+            }
+
+            var csvContent = GenerateCsvForPayslips(allPayslips);
+
+            return File(Encoding.UTF8.GetBytes(csvContent), "text/csv", "Payslips_By_PayrollId.csv");
+        }
+
+        //Select payslip to download by payroll ID
+        private string GenerateCsvForPayslips(IEnumerable<PayslipDto> payslips)
+        {
+            var sb = new StringBuilder();
+
+            // Updated CSV Header to include Department and Position
+            sb.AppendLine("Payroll Number,ID Number,Full Name,Department,Position,Payroll Period,Gross Salary,Net Salary,Total Deductions," +
+                          "SSS EE Share,SSS ER Share,PhilHealth EE Share,PhilHealth ER Share," +
+                          "Pag-IBIG EE Share,Pag-IBIG ER Share,Total EE Contributions,Total ER Contributions," +
+                          "Total Contribution,Others");
+
+            foreach (var payslip in payslips)
+            {
+                var others = payslip.EmployeeDeductions != null && payslip.EmployeeDeductions.Any()
+                    ? string.Join(", ", payslip.EmployeeDeductions.Select(d => $"{d.EmployeeDeductionName}: {d.Amount}"))
+                    : "N/A";
+
+                sb.AppendLine($"{payslip.PayrollNumber},{payslip.IdNumber},\"{payslip.FullName}\",\"{payslip.Department}\",\"{payslip.Position}\"," +
+                              $"\"{payslip.PayrollStartDate} - {payslip.PayrollEndDate}\"," +
+                              $"\"{payslip.GrossSalary}\",\"{payslip.NetSalary}\",\"{payslip.TotalDeductions}\"," +
+                              $"\"{payslip.SssEmployeeShare}\",\"{payslip.SssEmployerShare}\"," +
+                              $"\"{payslip.PhilHealthEmployeeShare}\",\"{payslip.PhilHealthEmployerShare}\"," +
+                              $"\"{payslip.PagibigEmployeeShare}\",\"{payslip.PagibigEmployerShare}\"," +
+                              $"\"{payslip.TotalEmployeeContributions}\",\"{payslip.TotalEmployerContributions}\"," +
+                              $"\"{payslip.TotalContribution}\",\"{others}\"");
+            }
+
+            return sb.ToString();
+        }
     }
 }

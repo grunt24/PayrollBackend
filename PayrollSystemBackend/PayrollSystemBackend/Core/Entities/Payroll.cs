@@ -44,8 +44,6 @@ namespace PayrollSystem.Domain.Entities
         public decimal TotalContribution { get; set; }
         public string? LeaveDates { get; set; }
 
-        
-
         public PayrollStatus? Status { get; set; } = PayrollStatus.Pending;
     }
     public enum PayrollStatus

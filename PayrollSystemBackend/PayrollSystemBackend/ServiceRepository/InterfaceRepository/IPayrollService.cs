@@ -17,6 +17,7 @@ namespace PayrollSystemBackend.ServiceRepository.InterfaceRepository
         Task<IEnumerable<PositionPayrollDto>> GetPayrollsByPosition();
         Task<IEnumerable<PayslipDto>> GetPayrollsByEmployee(int employeeId);
         Task<IEnumerable<PayslipDto>> GetPayslipByPayrollId(int payrollId);
+        Task<IEnumerable<PayslipDto>> GetPayrolls();
 
 
     }

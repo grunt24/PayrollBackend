@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using payroll_system.Core.Services;
 using PayrollSystemBackend.Core.Dto.Schedule;
@@ -9,6 +10,8 @@ namespace PayrollSystemBackend.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
+
     public class EmployeeScheduleController : ControllerBase
     {
         private readonly IEmployeeScheduleService _employeeScheduleService;

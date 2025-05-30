@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using PayrollSystem.Domain.Entities;
 using PayrollSystemBackend.ServiceRepository.InterfaceRepository;
 using System;
@@ -7,6 +8,8 @@ namespace payroll_system.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
+
     public class AllowanceController : ControllerBase
     {
         private readonly IAllowanceService _additionalEarningService;

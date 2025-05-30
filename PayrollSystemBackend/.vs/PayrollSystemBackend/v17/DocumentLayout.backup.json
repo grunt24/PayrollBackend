@@ -3,8 +3,40 @@
   "WorkspaceRootPath": "C:\\Users\\Brent Jay\\Desktop\\MainPayrollSystem\\PayrollSystemBackend\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{C42BF5FD-7969-4249-A9B1-BB0EFE410490}|PayrollSystemBackend\\PayrollSystemBackend.csproj|c:\\users\\brent jay\\desktop\\mainpayrollsystem\\payrollsystembackend\\payrollsystembackend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{C42BF5FD-7969-4249-A9B1-BB0EFE410490}|PayrollSystemBackend\\PayrollSystemBackend.csproj|solutionrelative:payrollsystembackend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C42BF5FD-7969-4249-A9B1-BB0EFE410490}|PayrollSystemBackend\\PayrollSystemBackend.csproj|c:\\users\\brent jay\\desktop\\mainpayrollsystem\\payrollsystembackend\\payrollsystembackend\\controllers\\payrollcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C42BF5FD-7969-4249-A9B1-BB0EFE410490}|PayrollSystemBackend\\PayrollSystemBackend.csproj|solutionrelative:payrollsystembackend\\controllers\\payrollcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C42BF5FD-7969-4249-A9B1-BB0EFE410490}|PayrollSystemBackend\\PayrollSystemBackend.csproj|c:\\users\\brent jay\\desktop\\mainpayrollsystem\\payrollsystembackend\\payrollsystembackend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C42BF5FD-7969-4249-A9B1-BB0EFE410490}|PayrollSystemBackend\\PayrollSystemBackend.csproj|solutionrelative:payrollsystembackend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C42BF5FD-7969-4249-A9B1-BB0EFE410490}|PayrollSystemBackend\\PayrollSystemBackend.csproj|c:\\users\\brent jay\\desktop\\mainpayrollsystem\\payrollsystembackend\\payrollsystembackend\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C42BF5FD-7969-4249-A9B1-BB0EFE410490}|PayrollSystemBackend\\PayrollSystemBackend.csproj|solutionrelative:payrollsystembackend\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C42BF5FD-7969-4249-A9B1-BB0EFE410490}|PayrollSystemBackend\\PayrollSystemBackend.csproj|c:\\users\\brent jay\\desktop\\mainpayrollsystem\\payrollsystembackend\\payrollsystembackend\\servicerepository\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C42BF5FD-7969-4249-A9B1-BB0EFE410490}|PayrollSystemBackend\\PayrollSystemBackend.csproj|solutionrelative:payrollsystembackend\\servicerepository\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C42BF5FD-7969-4249-A9B1-BB0EFE410490}|PayrollSystemBackend\\PayrollSystemBackend.csproj|c:\\users\\brent jay\\desktop\\mainpayrollsystem\\payrollsystembackend\\payrollsystembackend\\servicerepository\\attendanceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C42BF5FD-7969-4249-A9B1-BB0EFE410490}|PayrollSystemBackend\\PayrollSystemBackend.csproj|solutionrelative:payrollsystembackend\\servicerepository\\attendanceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C42BF5FD-7969-4249-A9B1-BB0EFE410490}|PayrollSystemBackend\\PayrollSystemBackend.csproj|c:\\users\\brent jay\\desktop\\mainpayrollsystem\\payrollsystembackend\\payrollsystembackend\\servicerepository\\payrollservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C42BF5FD-7969-4249-A9B1-BB0EFE410490}|PayrollSystemBackend\\PayrollSystemBackend.csproj|solutionrelative:payrollsystembackend\\servicerepository\\payrollservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C42BF5FD-7969-4249-A9B1-BB0EFE410490}|PayrollSystemBackend\\PayrollSystemBackend.csproj|c:\\users\\brent jay\\desktop\\mainpayrollsystem\\payrollsystembackend\\payrollsystembackend\\migrations\\20250421074943_deployed-initialmigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C42BF5FD-7969-4249-A9B1-BB0EFE410490}|PayrollSystemBackend\\PayrollSystemBackend.csproj|solutionrelative:payrollsystembackend\\migrations\\20250421074943_deployed-initialmigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C42BF5FD-7969-4249-A9B1-BB0EFE410490}|PayrollSystemBackend\\PayrollSystemBackend.csproj|c:\\users\\brent jay\\desktop\\mainpayrollsystem\\payrollsystembackend\\payrollsystembackend\\core\\dbcontext\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C42BF5FD-7969-4249-A9B1-BB0EFE410490}|PayrollSystemBackend\\PayrollSystemBackend.csproj|solutionrelative:payrollsystembackend\\core\\dbcontext\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,20 +46,118 @@
       "DocumentGroups": [
         {
           "DockedWidth": 309,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PayrollController.cs",
+              "DocumentMoniker": "C:\\Users\\Brent Jay\\Desktop\\MainPayrollSystem\\PayrollSystemBackend\\PayrollSystemBackend\\Controllers\\PayrollController.cs",
+              "RelativeDocumentMoniker": "PayrollSystemBackend\\Controllers\\PayrollController.cs",
+              "ToolTip": "C:\\Users\\Brent Jay\\Desktop\\MainPayrollSystem\\PayrollSystemBackend\\PayrollSystemBackend\\Controllers\\PayrollController.cs",
+              "RelativeToolTip": "PayrollSystemBackend\\Controllers\\PayrollController.cs",
+              "ViewState": "AgIAAKwAAAAAAAAAAAAcwNMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-30T04:03:21.94Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AttendanceService.cs",
+              "DocumentMoniker": "C:\\Users\\Brent Jay\\Desktop\\MainPayrollSystem\\PayrollSystemBackend\\PayrollSystemBackend\\ServiceRepository\\AttendanceService.cs",
+              "RelativeDocumentMoniker": "PayrollSystemBackend\\ServiceRepository\\AttendanceService.cs",
+              "ToolTip": "C:\\Users\\Brent Jay\\Desktop\\MainPayrollSystem\\PayrollSystemBackend\\PayrollSystemBackend\\ServiceRepository\\AttendanceService.cs",
+              "RelativeToolTip": "PayrollSystemBackend\\ServiceRepository\\AttendanceService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-22T02:07:34.708Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Brent Jay\\Desktop\\MainPayrollSystem\\PayrollSystemBackend\\PayrollSystemBackend\\Program.cs",
+              "RelativeDocumentMoniker": "PayrollSystemBackend\\Program.cs",
+              "ToolTip": "C:\\Users\\Brent Jay\\Desktop\\MainPayrollSystem\\PayrollSystemBackend\\PayrollSystemBackend\\Program.cs",
+              "RelativeToolTip": "PayrollSystemBackend\\Program.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAQwCIAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-22T01:52:36.914Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Brent Jay\\Desktop\\MainPayrollSystem\\PayrollSystemBackend\\PayrollSystemBackend\\appsettings.json",
+              "RelativeDocumentMoniker": "PayrollSystemBackend\\appsettings.json",
+              "ToolTip": "C:\\Users\\Brent Jay\\Desktop\\MainPayrollSystem\\PayrollSystemBackend\\PayrollSystemBackend\\appsettings.json",
+              "RelativeToolTip": "PayrollSystemBackend\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-04-21T07:53:13.293Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "20250421074943_Deployed-InitialMigration.cs",
+              "DocumentMoniker": "C:\\Users\\Brent Jay\\Desktop\\MainPayrollSystem\\PayrollSystemBackend\\PayrollSystemBackend\\Migrations\\20250421074943_Deployed-InitialMigration.cs",
+              "RelativeDocumentMoniker": "PayrollSystemBackend\\Migrations\\20250421074943_Deployed-InitialMigration.cs",
+              "ToolTip": "C:\\Users\\Brent Jay\\Desktop\\MainPayrollSystem\\PayrollSystemBackend\\PayrollSystemBackend\\Migrations\\20250421074943_Deployed-InitialMigration.cs",
+              "RelativeToolTip": "PayrollSystemBackend\\Migrations\\20250421074943_Deployed-InitialMigration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T07:49:44.535Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "PayrollService.cs",
               "DocumentMoniker": "C:\\Users\\Brent Jay\\Desktop\\MainPayrollSystem\\PayrollSystemBackend\\PayrollSystemBackend\\ServiceRepository\\PayrollService.cs",
               "RelativeDocumentMoniker": "PayrollSystemBackend\\ServiceRepository\\PayrollService.cs",
               "ToolTip": "C:\\Users\\Brent Jay\\Desktop\\MainPayrollSystem\\PayrollSystemBackend\\PayrollSystemBackend\\ServiceRepository\\PayrollService.cs",
               "RelativeToolTip": "PayrollSystemBackend\\ServiceRepository\\PayrollService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-14T00:20:26.525Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-21T07:49:11.372Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "C:\\Users\\Brent Jay\\Desktop\\MainPayrollSystem\\PayrollSystemBackend\\PayrollSystemBackend\\ServiceRepository\\AuthService.cs",
+              "RelativeDocumentMoniker": "PayrollSystemBackend\\ServiceRepository\\AuthService.cs",
+              "ToolTip": "C:\\Users\\Brent Jay\\Desktop\\MainPayrollSystem\\PayrollSystemBackend\\PayrollSystemBackend\\ServiceRepository\\AuthService.cs",
+              "RelativeToolTip": "PayrollSystemBackend\\ServiceRepository\\AuthService.cs",
+              "ViewState": "AgIAAE0AAAAAAAAAAAAwwB0AAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T07:45:46.889Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\Brent Jay\\Desktop\\MainPayrollSystem\\PayrollSystemBackend\\PayrollSystemBackend\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "PayrollSystemBackend\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\Brent Jay\\Desktop\\MainPayrollSystem\\PayrollSystemBackend\\PayrollSystemBackend\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "PayrollSystemBackend\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAgwCIAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T07:45:12.499Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\Brent Jay\\Desktop\\MainPayrollSystem\\PayrollSystemBackend\\PayrollSystemBackend\\Core\\DBContext\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "PayrollSystemBackend\\Core\\DBContext\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\Brent Jay\\Desktop\\MainPayrollSystem\\PayrollSystemBackend\\PayrollSystemBackend\\Core\\DBContext\\ApplicationDbContext.cs",
+              "RelativeToolTip": "PayrollSystemBackend\\Core\\DBContext\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T07:53:10.126Z"
             }
           ]
         }

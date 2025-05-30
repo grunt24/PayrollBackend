@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using payroll_system.Core.Entities;
 using payroll_system.Core.Services;
 using PayrollSystem.Domain.Entities;
@@ -11,6 +12,8 @@ namespace payroll_system.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
+
     public class EmployeeController : ControllerBase
     {
         private readonly IEmployeeService _employeeService;

@@ -7,6 +7,8 @@ public class PayslipDto
 {
     public required int PayrollNumber { get; set; }
     public required string IdNumber { get; set; }
+    public required string Department { get; set; }
+    public required string Position { get; set; }
     public required string FullName { get; set; }
     public required string PayrollStartDate { get; set; }
     public required string PayrollEndDate { get; set; }

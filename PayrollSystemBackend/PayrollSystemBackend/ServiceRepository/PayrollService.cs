@@ -7,7 +7,6 @@ using PayrollSystemBackend.Core.Dto.Payroll;
 using PayrollSystemBackend.Core.Dto.Payroll.EmployeeAllowancesDto;
 using PayrollSystemBackend.Core.Dto.Payroll.PayslipPerPositionAndDepartment;
 using PayrollSystemBackend.Core.Entities;
-using PayrollSystemBackend.Migrations;
 using PayrollSystemBackend.ServiceRepository.InterfaceRepository;
 using System;
 using System.Collections.Generic;
@@ -284,6 +283,7 @@ namespace PayrollSystemBackend
                     TotalContribution = totalContribution,
                     LeaveDates = string.Join(", ", leaveDates),
 
+
                 };
 
                 await _context.Payrolls.AddAsync(payroll);
@@ -450,6 +450,52 @@ namespace PayrollSystemBackend
             }).ToList();
         }
 
+        public async Task<IEnumerable<PayslipDto>> GetPayrolls()
+        {
+            var payrolls = await _context.Payrolls
+                .Include(p => p.Employee)
+                    .ThenInclude(e => e.Department)
+                .Include(p => p.Employee)
+                    .ThenInclude(e => e.Position)
+                .Include(p => p.Employee)
+                    .ThenInclude(e => e.EmployeeDeductions)
+                .AsNoTracking()
+                .ToListAsync();
+
+            var payrollDtos = payrolls.Select(p => new PayslipDto
+            {
+                PayrollNumber = p.Id,
+                IdNumber = p.Employee.IDNumber,
+                Department = p.Employee.Department?.DepartmentName ?? "N/A",
+                Position = p.Employee.Position?.PositionName ?? "N/A",
+                FullName = p.Employee.FullName,
+                PayrollStartDate = p.PayrollStartDate.ToString("MMMM dd, yyyy"),
+                PayrollEndDate = p.PayrollEndDate.ToString("MMMM dd, yyyy"),
+                GrossSalary = p.GrossSalary,
+                NetSalary = p.NetSalary,
+                TotalDeductions = p.TotalDeductions,
+                SssEmployeeShare = p.SSSEmployeeShare,
+                SssEmployerShare = p.SSSEmployerShare,
+                PhilHealthEmployeeShare = p.PhilHealthEmployeeShare,
+                PhilHealthEmployerShare = p.PhilHealthEmployerShare,
+                PagibigEmployeeShare = p.PagibigEmployeeShare,
+                PagibigEmployerShare = p.PagibigEmployerShare,
+                TotalEmployeeContributions = p.TotalEmployeeContributions,
+                TotalEmployerContributions = p.TotalEmployerContributions,
+                TotalContribution = p.TotalContribution,
+                EmployeeDeductions = p.Employee.EmployeeDeductions?
+                    .Where(ed => ed.IsActive)
+                    .Select(d => new EmployeeDeduction
+                    {
+                        Id = d.Id,
+                        EmployeeDeductionName = d.EmployeeDeductionName,
+                        Amount = d.Amount
+                    }).ToList() ?? new List<EmployeeDeduction>()
+            })
+            .ToList();
+
+            return payrollDtos;
+        }
 
         public async Task<IEnumerable<DepartmentPayrollDto>> GetPayrollsByDepartment()
         {
@@ -478,6 +524,8 @@ namespace PayrollSystemBackend
                     {
                         PayrollNumber = p.Id,
                         IdNumber = p.Employee.IDNumber,
+                        Department = p.Employee.Department.DepartmentName,
+                        Position = p.Employee.Position.PositionName,
                         FullName = p.Employee.FullName,
                         PayrollStartDate = p.PayrollStartDate.ToString("MMMM dd, yyyy"),
                         PayrollEndDate = p.PayrollEndDate.ToString("MMMM dd, yyyy"),
@@ -531,6 +579,8 @@ namespace PayrollSystemBackend
             {
                 PayrollNumber = p.Id,
                 IdNumber = p.Employee.IDNumber,
+                Department = p.Employee.Department.DepartmentName,
+                Position = p.Employee.Position.PositionName,
                 FullName = p.Employee.FullName,
                 PayrollStartDate = p.PayrollStartDate.ToString("MMMM dd, yyyy"),
                 PayrollEndDate = p.PayrollEndDate.ToString("MMMM dd, yyyy"),
@@ -584,6 +634,8 @@ namespace PayrollSystemBackend
                     {
                         PayrollNumber = p.Id,
                         IdNumber = p.Employee.IDNumber,
+                        Department = p.Employee.Department.DepartmentName,
+                        Position = p.Employee.Position.PositionName,
                         FullName = p.Employee.FullName,
                         PayrollStartDate = p.PayrollStartDate.ToString("MMMM dd, yyyy"),
                         PayrollEndDate = p.PayrollEndDate.ToString("MMMM dd, yyyy"),
@@ -670,6 +722,8 @@ namespace PayrollSystemBackend
             var payrolls = await _context.Payrolls
                 .Include(p => p.Employee)
                     .ThenInclude(e => e.Department)
+                                    .Include(p => p.Employee)
+                    .ThenInclude(e => e.Position)
                 .Include(p => p.Employee)
                     .ThenInclude(e => e.AcademicAward)
                 .Include(p => p.Employee)
@@ -688,6 +742,8 @@ namespace PayrollSystemBackend
             {
                 PayrollNumber = p.Id,
                 IdNumber = p.Employee.IDNumber,
+                Department = p.Employee.Department.DepartmentName,
+                Position = p.Employee.Position.PositionName,
                 FullName = p.Employee.FullName,
                 PayrollStartDate = p.PayrollStartDate.ToString("MMMM dd, yyyy"),
                 PayrollEndDate = p.PayrollEndDate.ToString("MMMM dd, yyyy"),

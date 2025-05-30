@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using payroll_system.Core.Entities;
 using PayrollSystemBackend.ServiceRepository.InterfaceRepository;
 using System.Collections.Generic;
@@ -7,6 +8,8 @@ namespace payroll_system.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
+
     public class PositionController : ControllerBase
     {
         private readonly IPositionService _positionService;

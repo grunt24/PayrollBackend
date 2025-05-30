@@ -12,11 +12,14 @@ using System;
 using Microsoft.OpenApi.Any;
 using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
 using PayrollSystemBackend.Core.Dto.Attendance;
+using Microsoft.AspNetCore.Authorization;
 
 namespace PayrollSystemBackend.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
+
     public class AttendanceController : ControllerBase
     {
         private readonly ApplicationDbContext _context;

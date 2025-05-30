@@ -1,8 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using PayrollSystemBackend.ServiceRepository.InterfaceRepository;
 
 [Route("api/[controller]")]
 [ApiController]
+[Authorize]
+
 public class PhilhealthContributionController : ControllerBase
 {
     private readonly IPhilhealthContributionService service;

@@ -154,3 +154,4 @@ C:\Users\Brent Jay\Desktop\MainPayrollSystem\PayrollSystemBackend\PayrollSystemB
 C:\Users\Brent Jay\Desktop\MainPayrollSystem\PayrollSystemBackend\PayrollSystemBackend\obj\Debug\net8.0\PayrollSystemBackend.pdb
 C:\Users\Brent Jay\Desktop\MainPayrollSystem\PayrollSystemBackend\PayrollSystemBackend\obj\Debug\net8.0\PayrollSystemBackend.genruntimeconfig.cache
 C:\Users\Brent Jay\Desktop\MainPayrollSystem\PayrollSystemBackend\PayrollSystemBackend\obj\Debug\net8.0\ref\PayrollSystemBackend.dll
+C:\Users\Brent Jay\Desktop\MainPayrollSystem\PayrollSystemBackend\PayrollSystemBackend\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

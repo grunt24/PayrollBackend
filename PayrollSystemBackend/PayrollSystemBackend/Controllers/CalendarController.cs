@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PayrollSystemBackend.Core.Entities;
 using PayrollSystemBackend.ServiceRepository.InterfaceRepository;
@@ -8,6 +9,8 @@ namespace PayrollSystemBackend.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
+
     public class CalendarController(ICalendarService _calendarService) : ControllerBase
     {
         [HttpGet]

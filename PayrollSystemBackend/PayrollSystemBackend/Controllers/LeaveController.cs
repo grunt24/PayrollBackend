@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using PayrollSystemBackend.Core.Dto.Leave;
 using PayrollSystemBackend.Core.Entities;
 using PayrollSystemBackend.ServiceRepository.InterfaceRepository;
@@ -9,6 +10,8 @@ namespace PayrollSystemBackend.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
+
     public class LeaveController : ControllerBase
     {
         private readonly ILeaveService _leaveService;
